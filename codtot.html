@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan Cinta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            width: 120px;
+            height: 50px;
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+            position: relative;
+        }
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+            color: #a72828;
+            margin-top: 20px;
+        }
+        /* Footer selalu di bawah */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Apa kamu sayang aku? 🥰</h2>
+        <div class="buttons">
+            <button id="yes" onclick="showMessage()">Ya</button>
+            <button id="no" onmouseover="moveButton()">Tidak</button>
+        </div>
+        <p id="message">Lu Sok Asik Bangsat</p>
+    </div>
+
+    <footer>
+        <p>&copy; Dibuat Karena Mengantuk</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function moveButton() {
+            let btn = document.getElementById('no');
+            let maxX = window.innerWidth - btn.clientWidth - 20;
+            let maxY = window.innerHeight - btn.clientHeight - 20;
+            
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+            
+            btn.style.position = 'absolute';
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
